@@ -1,0 +1,21 @@
+.containers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
