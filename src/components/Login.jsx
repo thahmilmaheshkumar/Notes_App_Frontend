@@ -33,6 +33,7 @@ const Login = () => {
       );
       setErrOrCor(true);
       setError(response.data.message);
+      checkAuth();
       if (isAuth) {
         Navigate("/dashboard");
       }
