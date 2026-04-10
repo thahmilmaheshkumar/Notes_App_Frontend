@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../css/Nave.css";
 import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
@@ -8,7 +8,7 @@ import axios from "axios";
 
 const Navebar = () => {
   const Navigate = useNavigate();
-  const { isAuth, logout } = useContext(AuthContext);
+  const { checkAuth, isAuth, logout } = useContext(AuthContext);
   const handleLogout = async () => {
     try {
       const response = await logout();
@@ -17,6 +17,10 @@ const Navebar = () => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    checkAuth();
+  });
   return (
     <div>
       <nav>
