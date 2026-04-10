@@ -42,7 +42,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await axios.post(
         "https://notes-app-backend-tawny-two.vercel.app/api/auth/logout",
-        {},
         {
           withCredentials: true,
         },
