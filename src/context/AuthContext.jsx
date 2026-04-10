@@ -11,9 +11,12 @@ export const AuthProvider = ({ children }) => {
   const checkAuth = async () => {
     // Implement your logic to check if the user is authenticated
     try {
-      const response = await axios.get("http://localhost:5000/api/auth/me", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://notes-app-backend-tawny-two.vercel.app/api/auth/me",
+        {
+          withCredentials: true,
+        },
+      );
       setIsAuth(true);
     } catch (error) {
       console.error("Error checking authentication:", error.response);
@@ -22,9 +25,12 @@ export const AuthProvider = ({ children }) => {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/auth/me", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://notes-app-backend-tawny-two.vercel.app/api/auth/me",
+        {
+          withCredentials: true,
+        },
+      );
       setIsAuth(true);
       setUser(response.data.user);
     } catch (error) {
@@ -35,7 +41,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/logout",
+        "https://notes-app-backend-tawny-two.vercel.app/api/auth/logout",
         {},
         {
           withCredentials: true,

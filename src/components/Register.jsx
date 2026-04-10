@@ -4,7 +4,7 @@ import { FaUser } from "react-icons/fa";
 import axios from "axios";
 
 const Register = () => {
-  const api = "http://localhost:5000";
+  const api = "https://notes-app-backend-tawny-two.vercel.app";
   const [passOrText, setPassOrText] = useState(false);
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");

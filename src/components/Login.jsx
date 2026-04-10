@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const Navigate = useNavigate();
   const { user, checkAuth } = useContext(AuthContext);
-  const api = "http://localhost:5000";
+  const api = "https://notes-app-backend-tawny-two.vercel.app";
   const [passOrText, setPassOrText] = useState(false);
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");

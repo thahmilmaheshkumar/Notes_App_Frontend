@@ -26,7 +26,7 @@ const Dashboard = () => {
     try {
       if (editedId) {
         const response = await axios.put(
-          `http://localhost:5000/api/data/notes/?id=${editedId}`,
+          `https://notes-app-backend-tawny-two.vercel.app/api/data/notes/?id=${editedId}`,
           {
             note: editedNote,
           },
@@ -42,7 +42,7 @@ const Dashboard = () => {
         setNotes("");
       } else {
         const response = await axios.post(
-          "http://localhost:5000/api/data/notes",
+          "https://notes-app-backend-tawny-two.vercel.app/api/data/notes",
           { note: newNote },
           {
             withCredentials: true,
@@ -62,9 +62,12 @@ const Dashboard = () => {
 
   const fetchNotes = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/data/notes", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://notes-app-backend-tawny-two.vercel.app/api/data/notes",
+        {
+          withCredentials: true,
+        },
+      );
       // console.log("Fetched notes:", response.data.result);
       setNotes(response.data.result);
     } catch (error) {
@@ -83,7 +86,8 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     try {
       const response = await axios.delete(
-        "http://localhost:5000/api/data/notes/?id=" + id,
+        "https://notes-app-backend-tawny-two.vercel.app/api/data/notes/?id=" +
+          id,
         {
           withCredentials: true,
         },

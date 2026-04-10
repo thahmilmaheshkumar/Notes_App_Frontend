@@ -17,9 +17,12 @@ const Profile = () => {
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/auth/me", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://notes-app-backend-tawny-two.vercel.app/api/auth/me",
+        {
+          withCredentials: true,
+        },
+      );
 
       setUser(response.data.user);
       setProfile_Image(user.Image);
@@ -35,7 +38,7 @@ const Profile = () => {
       const formData = new FormData();
       formData.append("Image", image);
       const response = await axios.post(
-        "http://localhost:5000/api/auth/upload",
+        "https://notes-app-backend-tawny-two.vercel.app/api/auth/upload",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -55,7 +58,10 @@ const Profile = () => {
   return (
     <div className="containers">
       <div className="img">
-        <img src={`http://localhost:5000${profile_image}`} alt="" />
+        <img
+          src={`https://notes-app-backend-tawny-two.vercel.app${profile_image}`}
+          alt=""
+        />
       </div>
       <div className="details">
         <p>Name : {name}</p>
