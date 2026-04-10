@@ -31,6 +31,7 @@ const Login = () => {
         },
         { withCredentials: true },
       );
+      console.log(response);
       setErrOrCor(true);
       setError(response.data.message);
       await checkAuth();
