@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const Navigate = useNavigate();
-  const { user, checkAuth } = useContext(AuthContext);
+  const { user, checkAuth, isAuth } = useContext(AuthContext);
   const api = "https://notes-app-backend-tawny-two.vercel.app";
   const [passOrText, setPassOrText] = useState(false);
   const [userName, setUserName] = useState("");
@@ -33,8 +33,9 @@ const Login = () => {
       );
       setErrOrCor(true);
       setError(response.data.message);
-      checkAuth();
-      Navigate("/dashboard");
+      if (isAuth) {
+        Navigate("/dashboard");
+      }
     } catch (err) {
       setErrOrCor(false);
       setError(err.response.data.message);
